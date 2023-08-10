@@ -6,7 +6,7 @@ import pandas as pd
 if "data_file" not in st.session_state:
     st.session_state.data_file = None
 
-# Title and introduction
+# Title
 st.markdown(
     """
     <h1 style="color: blue; text-align: right; 
@@ -78,7 +78,6 @@ with st.sidebar:
         # Initialize chat history
         st.session_state.messages = [{"role": "system", "content": prompt_template}]
     if st.session_state.data_file != None:
-        # st.session_state.data_file
         st.dataframe(pd.read_csv(chosen_file))
 
 if "messages" not in st.session_state:
